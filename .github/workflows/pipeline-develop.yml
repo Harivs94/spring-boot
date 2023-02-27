@@ -36,7 +36,7 @@ jobs:
           push: true
           tags: 788155875213.dkr.ecr.ap-south-1.amazonaws.com/springboot:${{ github.sha }}
       - name: Deploy to ECS
-        uses: einaregilsson/ecs-deploy@v2.2.1
+        uses: einaregilsson/ecs-deploy@v2.301.1
         with:
           region: ap-south-1
           service: springboot-service
