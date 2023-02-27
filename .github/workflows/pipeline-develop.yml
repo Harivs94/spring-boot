@@ -60,12 +60,9 @@ jobs:
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
-      uses: appleboy/ecs-deploy@v2.4.4
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        region: ${{ env.AWS_REGION }}
-        cluster: ${{ env.ECS_CLUSTER }}
+        task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: ${{ env.ECS_SERVICE }}
-        image: ${{ steps.build-image.outputs.image }}
-        tag: ${{ github.sha }}
-        access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        cluster: ${{ env.ECS_CLUSTER }}
+        wait-for-service-stability: true
