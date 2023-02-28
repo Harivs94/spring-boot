@@ -61,7 +61,7 @@
 
    <!-- Spring boot maven plugin to create executable JAR -->
 	<build>
-		<finalName>spring-boot-api-tutorial</finalName>
+		<finalName>spring-boot-ecs</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -69,7 +69,7 @@
 				<executions>
 					<execution>
 						<configuration>
-							<mainClass>springboot.api.tutorial.TutorialApplication</mainClass>
+							<mainClass>com.example.demo.Application</mainClass>
 						</configuration>
 					</execution>
 				</executions>
