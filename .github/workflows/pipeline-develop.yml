@@ -23,7 +23,7 @@ jobs:
           settings-path: ${{ github.workspace }}
 
       # Build 
-      - name: Build and Test with Gradle
+      - name: Build and Test with Maven
         run: mvn -B package --file pom.xml
 
       # Configure AWS credentials
