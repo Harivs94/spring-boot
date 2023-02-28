@@ -8,7 +8,7 @@ RUN mvn package
 
 FROM openjdk:18-jdk-slim
 
-EXPOSE 8080
+EXPOSE 80
 
 ARG JAR_FILE=spring-boot-ecs.jar
 
